@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DbConnect {
     private static final String HOST = "localhost";
     private static final int PORT = 3306;
-    private static final String DB_NAME = "employees";
+    private static final String DB_NAME = "TOOLING";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
     public static Connection getConnect(){

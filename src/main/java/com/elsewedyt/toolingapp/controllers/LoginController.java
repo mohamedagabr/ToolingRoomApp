@@ -29,22 +29,11 @@ public class LoginController implements Initializable {
     private Button login_btn;
 
 
-
 public void initialize(URL url, ResourceBundle rb) {
     Image img = new Image(LoginController.class.getResourceAsStream("/images/company_logo.png"));
     logo_image_view.setImage(img);
 
     }
-//    @FXML
-//    void Login(MouseEvent event) {
-//
-//    }
-//
-//    @FXML
-//    void enterLogin(ActionEvent event) {
-//
-//    }
-
 
     @FXML
     void Login(MouseEvent event) {

@@ -17,6 +17,7 @@ public class MainApp extends Application {
             stage.setTitle("تسجيل الدخول");
             stage.setScene(scene);
             stage.show();
+            stage.setResizable(false);
     }catch (Exception e){
             System.out.println("Start Method : " + e);
         }
