@@ -121,13 +121,6 @@
     -fx-background-radius: 30;
 }
 
-.button-1{
-    -fx-background-color: #062C30;
-    -fx-background-radius: 30;
-    -fx-text-fill: white;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-}
-
 .button-1:pressed {
     -fx-background-color: #981100;
 }
@@ -229,5 +222,15 @@
 .table-view .column-header {
     -fx-background-color: #E9EFC0;
 }
-
+.Dept_lbl{
+    -fx-background-color: #d0d0d0;
+    -fx-background-radius: 10;
+    -fx-text-fill: #691f1f;
+}
+.control_btn{
+    -fx-background-color: #062C30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
 
