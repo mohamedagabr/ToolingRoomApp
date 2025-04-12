@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 
@@ -55,7 +58,7 @@ public class LoginController implements Initializable {
                 Stage stage = new Stage();
                 stage.setScene(new Scene(parent));
                 stage.show();
-                //JOptionPane.showMessageDialog(null,"Hellow You Are Connected");
+
             }else{
                 System.out.println("Error : " + -1);
             }
@@ -73,7 +76,6 @@ public class LoginController implements Initializable {
     void enterLogin(ActionEvent event) {
         loginHelp();
     }
-
 
 }
 

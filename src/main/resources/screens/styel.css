@@ -228,9 +228,26 @@
     -fx-text-fill: #691f1f;
 }
 .control_btn{
-    -fx-background-color: #062C30;
+    -fx-background-color: #807676;
     -fx-background-radius: 30;
     -fx-text-fill: white;
+    -fx-font-size: 24,bold;
     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+.users_btn{
+    -fx-background-color: #6D9886;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+}
+.users_Search_txtF{
+    -fx-background-radius: 20;
+}
+.addUser_btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
+}
+.emp_id_lbl{
+    -fx-background-color: #b8978a;
+    -fx-background-radius: 10;
 }
 

@@ -6,7 +6,7 @@ public class User {
     private String username ;
     private String password;
     private String fullname;
-    private int phone ;
+    private String phone ;
     private int role ;
     private int active;
     private String creation_date ;
@@ -15,11 +15,21 @@ public class User {
         super();
     }
 
-    public User(int id, int emp_id, String username, String password, String fullname, int phone, int role, int active, String creation_date) {
+    public User(int id, int emp_id, String username, String password, String fullname, String phone, int role, int active, String creation_date) {
         this.id = id;
         this.emp_id = emp_id;
         this.username = username;
         this.password = password;
+        this.fullname = fullname;
+        this.phone = phone;
+        this.role = role;
+        this.active = active;
+        this.creation_date = creation_date;
+    }
+
+    public User(int emp_id, String username, String fullname, String phone, int role, int active, String creation_date) {
+        this.emp_id = emp_id;
+        this.username = username;
         this.fullname = fullname;
         this.phone = phone;
         this.role = role;
@@ -67,11 +77,11 @@ public class User {
         this.fullname = fullname;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
