@@ -17,19 +17,20 @@
    <children>
       <HBox alignment="CENTER" layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="999.0" style="-fx-background-color: #D7D2D2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="478.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="165.0" styleClass="Dept_lbl" text="Processing Department" textFill="#f8f8f8" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="12.0" />
-               </HBox.margin>
-            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="478.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" scaleY="1.3" scaleZ="1.3" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="185.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="178.0" styleClass="Dept_lbl" text="Processing Department" textFill="#f8f8f8">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
             <VBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="328.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="289.0" VBox.vgrow="ALWAYS">
@@ -63,11 +64,11 @@
             </VBox>
          </children>
       </HBox>
-      <VBox layoutX="73.0" layoutY="88.0" prefHeight="533.0" prefWidth="999.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+      <VBox alignment="TOP_CENTER" layoutX="73.0" layoutY="88.0" prefHeight="533.0" prefWidth="999.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;">
+            <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;">
                <children>
-                  <Button mnemonicParsing="false" onAction="#addUser" prefHeight="37.0" prefWidth="155.0" styleClass="addUser_btn" text="اضافة مستخدم  ">
+                  <Button mnemonicParsing="false" onAction="#addUser" prefHeight="37.0" prefWidth="152.0" styleClass="addUser_btn" text="اضافة مستخدم  ">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -75,10 +76,10 @@
                         <Insets right="100.0" />
                      </HBox.margin>
                      <graphic>
-                        <FontAwesomeIconView glyphName="USER" size="18" />
+                        <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="20" />
                      </graphic>
                   </Button>
-                  <TextField fx:id="searchUsers_txtF" alignment="CENTER_RIGHT" onKeyPressed="#search_Users" prefHeight="34.0" prefWidth="232.0" styleClass="users_Search_txtF">
+                  <TextField fx:id="searchUsers_txtF" alignment="CENTER" onKeyPressed="#search_Users" prefHeight="32.0" prefWidth="232.0" promptText="البـــــــحــــــــث" styleClass="users_Search_txtF">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -86,13 +87,16 @@
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </TextField>
-                  <Label prefHeight="30.0" prefWidth="51.0" text="بحـــث">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="41.0">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="185.0" />
+                        <Insets right="175.0" />
                      </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView fill="#110e0e" glyphName="SEARCH" size="22" wrappingWidth="32.428632736206055" />
+                     </graphic>
                   </Label>
                </children>
                <VBox.margin>
@@ -144,6 +148,7 @@
                   </VBox>
                </children>
             </HBox>
+            <HBox prefHeight="70.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;" />
          </children>
       </VBox>
    </children>
