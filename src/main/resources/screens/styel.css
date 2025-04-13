@@ -182,7 +182,7 @@
 
 .button-8{
     -fx-background-color: #4781ff;
-    -fx-background-radius: 30;
+    -fx-background-radius: 20;
     -fx-text-fill: white;
 }
 
@@ -250,4 +250,11 @@
     -fx-background-color: #b8978a;
     -fx-background-radius: 10;
 }
-
+.Dept_Name_LoginForm{
+    -fx-background-radius: 10;
+}
+.save_users_btn{
+    -fx-background-color: #1033e3;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+}

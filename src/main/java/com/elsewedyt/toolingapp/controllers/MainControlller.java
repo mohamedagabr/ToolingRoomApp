@@ -61,6 +61,7 @@ public class MainControlller implements Initializable {
             Rectangle2D rd = Screen.getPrimary().getVisualBounds();
             stage.setX((rd.getWidth() - stage.getWidth()) / 2);
             stage.setY((rd.getHeight() - stage.getHeight()) / 2);
+            stage.setResizable(true);
         } catch (Exception ex) {
         }
     }

@@ -13,39 +13,47 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="645.0" prefWidth="999.0" stylesheets="@styel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elsewedyt.toolingapp.controllers.ControlPageController">
+<AnchorPane prefHeight="651.0" prefWidth="999.0" stylesheets="@styel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elsewedyt.toolingapp.controllers.ControlPageController">
    <children>
-      <HBox alignment="TOP_CENTER" layoutY="-1.0" prefHeight="92.0" prefWidth="999.0" style="-fx-background-color: #D7D2D2;" AnchorPane.bottomAnchor="744.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+      <HBox alignment="CENTER" layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="999.0" style="-fx-background-color: #D7D2D2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="382.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="478.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                <HBox.margin>
-                  <Insets right="10.0" top="3.0" />
+                  <Insets />
                </HBox.margin>
             </ImageView>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="271.0" styleClass="Dept_lbl" text="ETC Processing Department" textFill="#f8f8f8">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="165.0" styleClass="Dept_lbl" text="Processing Department" textFill="#f8f8f8" HBox.hgrow="ALWAYS">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets bottom="50.0" left="20.0" top="5.0" />
+                  <Insets bottom="12.0" />
                </HBox.margin>
             </Label>
-            <VBox alignment="TOP_RIGHT" prefHeight="76.0" prefWidth="291.0">
+            <VBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="328.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="256.0">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="5.0" right="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="date_lbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="36.0" prefWidth="251.0">
+                  <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="289.0" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets right="5.0" />
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="date_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="28.0" prefWidth="288.0" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="175.0" text="الوردية : الاولى" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" />
                      </VBox.margin>
                   </Label>
                </children>
@@ -55,9 +63,9 @@
             </VBox>
          </children>
       </HBox>
-      <VBox layoutX="73.0" layoutY="88.0" prefHeight="629.0" prefWidth="999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
+      <VBox layoutX="73.0" layoutY="88.0" prefHeight="533.0" prefWidth="999.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="88.0">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;">
+            <HBox alignment="CENTER_RIGHT" prefHeight="66.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;">
                <children>
                   <Button mnemonicParsing="false" onAction="#addUser" prefHeight="37.0" prefWidth="155.0" styleClass="addUser_btn" text="اضافة مستخدم  ">
                      <font>
@@ -83,7 +91,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="180.0" />
+                        <Insets right="185.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -93,7 +101,7 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" prefHeight="467.0" prefWidth="999.0" VBox.vgrow="ALWAYS">
                <children>
-                  <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="467.0" prefWidth="836.0" HBox.hgrow="ALWAYS">
+                  <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" HBox.hgrow="ALWAYS">
                      <columns>
                         <TableColumn fx:id="empId_colm" prefWidth="75.0" text="كود الموظف" />
                         <TableColumn fx:id="username_colm" prefWidth="89.6666259765625" text="اسم المستخدم" />

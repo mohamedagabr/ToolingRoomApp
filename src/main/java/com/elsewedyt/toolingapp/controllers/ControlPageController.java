@@ -67,9 +67,11 @@ public class ControlPageController implements Initializable {
     private TableColumn<User, String> edit_colm;
     @FXML
     private TextField searchUsers_txtF;
+
     ObservableList<User> listUsers ;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+       // fontawTools_lbl.setGraphic(new FontAwesomeIconView("fas-screwdriver-wrench"));
 
        Image img = new Image(LoginController.class.getResourceAsStream("/images/company_logo.png"));
        logo_ImageView.setImage(img);
@@ -99,8 +101,8 @@ public class ControlPageController implements Initializable {
         active_colm.setCellValueFactory(new PropertyValueFactory<>("active"));
         creationDate_colm.setCellValueFactory(new PropertyValueFactory<>("creation_date"));
 
-        empId_colm.setStyle("-fx-alignment: CENTER;-fx-font-size:14px;-fx-font-weight:bold;");
-        username_colm.setStyle("-fx-alignment: CENTER;-fx-font-size:14px;-fx-font-weight:bold;");
+        empId_colm.setStyle("-fx-alignment: CENTER;-fx-font-size:12px;-fx-font-weight:bold;");
+        username_colm.setStyle("-fx-alignment: CENTER;-fx-font-size:12px;-fx-font-weight:bold;");
         fullname_colm.setStyle("-fx-alignment: CENTER;");
         phone_colm.setStyle("-fx-alignment: CENTER;");
         roleGroup_colm.setStyle("-fx-alignment: CENTER;");
@@ -159,6 +161,19 @@ public class ControlPageController implements Initializable {
     }
 
     private void openEditUserPage(User us){
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/Screens/NewUser.fxml"));
+            Parent parent = fxmlLoader.load(); // Load the FXML and get the root
+            Add_Update_UserController add_update_user_controller = fxmlLoader.getController();
+            add_update_user_controller.setUserData(us);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(parent));
+            stage.setTitle("تعديل مستخدم");
+            stage.show();
+            add_update_user_controller.setSaveButton();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
 
     }
     @FXML
@@ -212,6 +227,7 @@ public class ControlPageController implements Initializable {
             Rectangle2D rd = Screen.getPrimary().getVisualBounds();
             stage.setX((rd.getWidth() - stage.getWidth()) / 2);
             stage.setY((rd.getHeight() - stage.getHeight()) / 2);
+            stage.setResizable(false);
         } catch (Exception ex) {
         }
     }

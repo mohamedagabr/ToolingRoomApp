@@ -2,31 +2,22 @@ package com.elsewedyt.toolingapp.controllers;
 import com.elsewedyt.toolingapp.Logging.logging;
 import com.elsewedyt.toolingapp.dao.UserDao;
 import com.elsewedyt.toolingapp.models.User;
-import com.elsewedyt.toolingapp.services.WindowUtils;
 //import com.elsewedyt.toolingapp.Logging.logging.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static com.elsewedyt.toolingapp.Logging.logging.ERROR;
 
 //import static com.elsewedyt.toolingapp.Logging.logging.ERROR;
 
@@ -35,6 +26,8 @@ public class LoginController implements Initializable {
     private ImageView logo_image_view;
     @FXML
     private ImageView join_ImageView;
+    @FXML
+    private ImageView tools_img_view;
     @FXML
     private TextField user_name_txtF;
 
@@ -46,6 +39,10 @@ public class LoginController implements Initializable {
         logo_image_view.setImage(logoImg);
         Image joinImg = new Image(LoginController.class.getResourceAsStream("/images/join.png"));
         join_ImageView.setImage(joinImg);
+        Image toolsImg = new Image(LoginController.class.getResourceAsStream("/images/tools01.png"));
+        tools_img_view.setImage(toolsImg);
+
+
     }
     private void loginHelp() {
         User user = UserDao.checkLogin(user_name_txtF.getText(), password_passF.getText());
@@ -58,6 +55,7 @@ public class LoginController implements Initializable {
                 Stage stage = new Stage();
                 stage.setScene(new Scene(parent));
                 stage.show();
+                stage.setResizable(false);
 
             }else{
                 System.out.println("Error : " + -1);
@@ -70,6 +68,7 @@ public class LoginController implements Initializable {
 
     @FXML
     void login(ActionEvent event) {
+
         loginHelp();
     }
     @FXML
