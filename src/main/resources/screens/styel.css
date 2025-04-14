@@ -207,54 +207,74 @@
     -fx-effect: dropShadow(three-pass-box,rgba(0,0,0,0.1), 10.0 , 0.0 , 0.0 ,10.0);
 }
 
-
 .comboBox{
     -fx-background-color: #40E0D0;
     -fx-background-radius: 30;
 }
-
 .add-btn{
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 100;
 }
 
-
 .table-view .column-header {
     -fx-background-color: #E9EFC0;
 }
-.Dept_lbl{
-    -fx-background-color: #d0d0d0;
+
+
+/* All Project Tooling Pages  */
+.deptartment_lbl{
+    -fx-background-color: #9f9a9a;  /* 827272 - 6D9886 -807676 */
     -fx-background-radius: 10;
-    -fx-text-fill: #691f1f;
+    -fx-text-fill: #ffffff;
 }
+
+.emp_id_lbl{
+    -fx-background-color: #b8978a;
+    -fx-background-radius: 10;
+}
+/* Main Page */
 .control_btn{
     -fx-background-color: #807676;
     -fx-background-radius: 30;
     -fx-text-fill: white;
-    -fx-font-size: 24,bold;
+    /*-fx-font-size: 24,bold;*/
     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
 }
+/* Login Page */
+.Dept_Name_LoginForm{
+    -fx-background-radius: 10;
+}
+
+/* Control Page */
+
 .users_btn{
     -fx-background-color: #6D9886;
     -fx-background-radius: 30;
     -fx-text-fill: white;
 }
-.users_Search_txtF{
+.search_controlPage{
     -fx-background-radius: 20;
 }
-.addUser_btn{
+.load_btn{
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 100;
 }
-.emp_id_lbl{
-    -fx-background-color: #b8978a;
-    -fx-background-radius: 10;
+.print_btn{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
 }
-.Dept_Name_LoginForm{
-    -fx-background-radius: 10;
+.box_welcome{
+    -fx-background-color: #9f9a9a;
+    -fx-background-radius: 15;
+    -fx-text-fill: white;
+}
+/* Add-Update Page */
+.addUser_btn {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 100;
 }
 .save_users_btn{
-    -fx-background-color: #1033e3;
+    -fx-background-color: #038296;
     -fx-background-radius: 20;
     -fx-text-fill: white;
 }

@@ -15,6 +15,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
+import static com.elsewedyt.toolingapp.Logging.logging.*;
+import static com.elsewedyt.toolingapp.services.WindowUtils.ALERT;
+import static com.elsewedyt.toolingapp.services.SettingService.APP_BUNDLE;
+import static com.elsewedyt.toolingapp.services.WindowUtils.ALERT_ERROR;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -58,22 +65,32 @@ public class LoginController implements Initializable {
                 stage.setResizable(false);
 
             }else{
-                System.out.println("Error : " + -1);
+                ALERT("",APP_BUNDLE().getString("Login Error"),ALERT_ERROR);
+                logMessage(ERROR,this.getClass().getName(),"loginHelp","Connection Error");
             }
         } catch (Exception ex) {
             //System.out.println("loginHelp :" + ex);
-            logging.logException("ERROR", this.getClass().getName(), "Login", ex);
+            logging.logException("ERROR", this.getClass().getName(), "loginHelp", ex);
         }
     }
 
     @FXML
     void login(ActionEvent event) {
-
-        loginHelp();
+        try {
+            loginHelp();
+        }catch (Exception ex){
+        logging.logException("ERROR", this.getClass().getName(), "login", ex);
+        JOptionPane.showMessageDialog(null,"خطأ فى اسم المستخدم او كلمة المرور");
+        }
     }
     @FXML
     void enterLogin(ActionEvent event) {
-        loginHelp();
+        try {
+            loginHelp();
+        }catch (Exception ex){
+            logging.logException("ERROR", this.getClass().getName(), "enterLogin", ex);
+            JOptionPane.showMessageDialog(null,"خطأ فى اسم المستخدم او كلمة المرور");
+        }
     }
 
 }

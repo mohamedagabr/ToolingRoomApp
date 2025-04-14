@@ -12,6 +12,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static com.elsewedyt.toolingapp.services.SettingService.APP_BUNDLE;
+import static com.elsewedyt.toolingapp.services.WindowUtils.ALERT;
+import static com.elsewedyt.toolingapp.services.WindowUtils.ALERT_ERROR;
+
 public class UserDao {
     public static User checkLogin(String username, String pass) {
         User user = null;
@@ -30,10 +34,13 @@ public class UserDao {
                 user.setPassword(rs.getString(DEF.USERS_PASSWORD));
                 user.setFullname(rs.getString(DEF.USERS_FULLNAME));
                 UserContext.setCurrentUser(user);
+            }else{
+                ALERT("",APP_BUNDLE().getString("Login Error"),ALERT_ERROR);
             }
         } catch (Exception e) {
             //logging.logException("ERROR", UserDao.class.getName(), "checkLogin", e);
             logging.logExpWithMessage("ERROR", UserDao.class.getName(), "checkLogin", e,"sql",ps.toString());
+            ALERT("",APP_BUNDLE().getString("Login Error"),ALERT_ERROR);
 
         } finally {
             try {

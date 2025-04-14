@@ -188,7 +188,7 @@ public class ControlPageController implements Initializable {
                     return true;    }
                 // Compare first name and last name of every person with filter text.
                 String lowerCaseFilter = newValue.toLowerCase();
-                String empId = user.getId() + "";
+                String empId = user.getEmp_id() + "";
                 String role = user.getRole() + "";
                 String active = user.getActive() + "";
                 //String username = user.getUsername() + "";
@@ -223,7 +223,7 @@ public class ControlPageController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             stage.setScene(scene);
-            stage.setTitle("Control Page");
+            stage.setTitle("Add User");
             Rectangle2D rd = Screen.getPrimary().getVisualBounds();
             stage.setX((rd.getWidth() - stage.getWidth()) / 2);
             stage.setY((rd.getHeight() - stage.getHeight()) / 2);

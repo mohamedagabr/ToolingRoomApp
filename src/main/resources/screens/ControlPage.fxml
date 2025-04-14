@@ -17,49 +17,55 @@
    <children>
       <HBox alignment="CENTER" layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="92.0" prefWidth="999.0" style="-fx-background-color: #D7D2D2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
          <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="92.0" prefWidth="353.0" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="478.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" scaleY="1.3" scaleZ="1.3" />
+                  <ImageView fx:id="logo_ImageView" fitHeight="86.0" fitWidth="364.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" scaleY="1.5" scaleZ="1.5" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" prefHeight="92.0" prefWidth="185.0" HBox.hgrow="ALWAYS">
+            <VBox prefHeight="92.0" prefWidth="332.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="38.0" prefWidth="178.0" styleClass="Dept_lbl" text="Processing Department" textFill="#f8f8f8">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="208.0" styleClass="deptartment_lbl" text="Processing Department" textFill="#f8f8f8">
                      <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-            <VBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="328.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="289.0" VBox.vgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="18.0" />
                      </font>
                      <VBox.margin>
-                        <Insets right="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label fx:id="date_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="28.0" prefWidth="288.0" VBox.vgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets right="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="175.0" text="الوردية : الاولى" VBox.vgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets right="10.0" />
+                        <Insets top="10.0" />
                      </VBox.margin>
                   </Label>
                </children>
                <HBox.margin>
-                  <Insets />
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="80.0" prefWidth="218.0" styleClass="box_welcome" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="289.0" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="date_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="28.0" prefWidth="288.0" textFill="#fcfcfc" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="175.0" text="الوردية : الاولى" textFill="WHITE" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="7.0" right="2.0" top="5.0" />
                </HBox.margin>
             </VBox>
          </children>
@@ -68,9 +74,17 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="61.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;">
                <children>
-                  <Button mnemonicParsing="false" onAction="#addUser" prefHeight="37.0" prefWidth="152.0" styleClass="addUser_btn" text="اضافة مستخدم  ">
+                  <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="70.0" styleClass="print_btn" text="طباعة ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PRINT" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets right="120.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="134.0" styleClass="addUser_btn" text="اضافة مستخدم ">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold" size="14.0" />
                      </font>
                      <HBox.margin>
                         <Insets right="100.0" />
@@ -79,9 +93,20 @@
                         <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="20" />
                      </graphic>
                   </Button>
-                  <TextField fx:id="searchUsers_txtF" alignment="CENTER" onKeyPressed="#search_Users" prefHeight="32.0" prefWidth="232.0" promptText="البـــــــحــــــــث" styleClass="users_Search_txtF">
+                  <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="82.0" styleClass="load_btn" text="تحديث ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SPINNER" />
+                     </graphic>
                      <HBox.margin>
-                        <Insets right="10.0" />
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField fx:id="searchUsers_txtF" alignment="CENTER" onKeyPressed="#search_Users" prefHeight="32.0" prefWidth="232.0" promptText="البـــــــحــــــــث" styleClass="search_controlPage">
+                     <HBox.margin>
+                        <Insets right="5.0" />
                      </HBox.margin>
                      <font>
                         <Font name="System Bold" size="16.0" />
@@ -108,11 +133,11 @@
                   <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" HBox.hgrow="ALWAYS">
                      <columns>
                         <TableColumn fx:id="empId_colm" prefWidth="75.0" text="كود الموظف" />
-                        <TableColumn fx:id="username_colm" prefWidth="89.6666259765625" text="اسم المستخدم" />
+                        <TableColumn fx:id="username_colm" minWidth="20.0" prefWidth="89.6666259765625" text="اسم المستخدم" />
                         <TableColumn fx:id="fullname_colm" maxWidth="6000.0" minWidth="40.0" prefWidth="60.3333740234375" text="الاسم بالكامل" />
                         <TableColumn fx:id="phone_colm" prefWidth="75.0" text="رقم الموبيل" />
-                        <TableColumn fx:id="roleGroup_colm" minWidth="30.0" prefWidth="75.0" text="مجموعة المستخدم" />
-                        <TableColumn fx:id="active_colm" maxWidth="4000.0" prefWidth="75.0" text="النشاط" />
+                        <TableColumn fx:id="roleGroup_colm" maxWidth="3000.0" prefWidth="75.0" text="الدور" />
+                        <TableColumn fx:id="active_colm" maxWidth="3000.0" prefWidth="75.0" text="النشاط" />
                         <TableColumn fx:id="creationDate_colm" prefWidth="75.0" text="تاريخ الانشاء" />
                         <TableColumn fx:id="edit_colm" minWidth="30.0" prefWidth="75.0" text="تعديل - حذف" />
                      </columns>
@@ -148,7 +173,10 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox prefHeight="70.0" prefWidth="999.0" style="-fx-background-color: #A9A9A9;" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="986.0" style="-fx-background-color: #D7D2D2;">
+               <children>
+                  <VBox prefHeight="51.0" prefWidth="186.0" style="-fx-background-color: #A9A9A9;" />
+               </children></HBox>
          </children>
       </VBox>
    </children>
