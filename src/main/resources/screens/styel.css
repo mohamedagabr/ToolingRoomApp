@@ -3,96 +3,11 @@
     -fx-background-radius: 100;
 }
 
-.box{
-    -fx-background-color: #E0D8B0;
-    -fx-background-radius: 30;
-}
-
-.box2{
-    -fx-background-color: #D3E4CD;
-    -fx-background-radius: 20;
-}
-
-.box3{
-    -fx-background-color: #47B5FF;
-    -fx-background-radius: 20;
-}
-
-.box4{
-    -fx-background-color: #045c70;
-    -fx-background-radius: 20;
-}
-
-
 
 .box8{
     -fx-background-color: rgb(222, 217, 217);
     -fx-background-radius: 20;
     -fx-border-radius: 10px;
-}
-
-.box9{
-    -fx-background-color: #B0D0D3;
-    -fx-background-radius: 20;
-}
-
-.box-samll{
-    -fx-background-color: #06113C;
-    -fx-background-radius: 50;
-}
-.box-samll1{
-    -fx-background-color: #FF8C32;
-    -fx-background-radius: 50;
-}
-.box-samll2{
-    -fx-background-color: #FF6B6B;
-    -fx-background-radius: 50;
-}
-.box-samll3{
-    -fx-background-color: #243D25;
-    -fx-background-radius: 50;
-}
-
-
-.box-samll4{
-    -fx-background-color: #03045E;
-    -fx-background-radius: 50;
-}
-.box-samll5{
-    -fx-background-color: #00B4D8;
-    -fx-background-radius: 50;
-}
-.box-samll6{
-    -fx-background-color: #90E0EF;
-    -fx-background-radius: 50;
-}
-.box-samll7{
-    -fx-background-color: #398AB9;
-    -fx-background-radius: 50;
-}
-
-
-.box-samll8{
-    -fx-background-color: #D67D3E;
-    -fx-background-radius: 50;
-}
-.box-samll9{
-    -fx-background-color: #00B4D8;
-    -fx-background-radius: 50;
-}
-.box-samll10{
-    -fx-background-color: #570530;
-    -fx-background-radius: 50;
-}
-.box-samll11{
-    -fx-background-color: #CA965C;
-    -fx-background-radius: 50;
-}
-
-
-.box_graid{
-    -fx-background-color: #04293A;
-    -fx-background-radius: 20;
 }
 
 .labelDesign{
@@ -231,6 +146,12 @@
 /* Login Page */
 .Dept_Name_LoginForm{
     -fx-background-radius: 10;
+}
+.box-samll1{
+    -fx-background-color: #dad5d1;
+    -fx-background-radius: 40;
+
+
 }
 
 /* Control Page */

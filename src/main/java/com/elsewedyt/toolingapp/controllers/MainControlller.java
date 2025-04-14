@@ -19,7 +19,9 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class MainControlller implements Initializable {
@@ -39,8 +41,11 @@ public class MainControlller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image img = new Image(LoginController.class.getResourceAsStream("/images/company_logo.png"));
         logo_ImageView.setImage(img);
-        String date = LocalDate.now() + "";
-        date_lbl.setText("تاريخ اليوم : " + date);
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy  hh:mm a");
+        date_lbl.setText(dateFormat.format(date) +" ");
+         //String date = LocalDate.now() + "";
+        //date_lbl.setText("تاريخ اليوم : " + date);
         //String msg = "مرحبا : " + UserContext.getCurrentUser().getFullname();
         //welcome_lbl.setText(msg);
 
