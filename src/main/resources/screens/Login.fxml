@@ -1,121 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="592.0" prefWidth="750.0" stylesheets="@styel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elsewedyt.toolingapp.controllers.LoginController">
+<AnchorPane prefHeight="577.0" prefWidth="635.0" stylesheets="@styel.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.elsewedyt.toolingapp.controllers.LoginController">
    <children>
-      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="547.0" prefWidth="336.0" style="-fx-background-color: #D7D2D2;">
+      <Pane prefHeight="315.0" prefWidth="635.0">
          <children>
-            <ImageView fx:id="logo_image_view" fitHeight="221.0" fitWidth="288.0" layoutX="20.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="41.0" layoutY="373.0" prefHeight="54.0" prefWidth="251.0" text="Tooling Room Application" textFill="#e0030b">
+            <ImageView fx:id="join_ImageView" fitHeight="48.0" fitWidth="84.0" layoutX="272.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+            <Text layoutX="230.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تسجيل الدخول ">
+               <font>
+                  <Font name="Montserrat Bold" size="25.0" />
+               </font>
+            </Text>
+            <Label layoutX="196.0" layoutY="9.0" prefHeight="37.0" prefWidth="277.0" styleClass="Dept_Name_LoginForm" text="Processing Department">
+               <font>
+                  <Font name="Montserrat Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="217.0" layoutY="46.0" prefHeight="37.0" prefWidth="206.0" text="Tooling Room Application" textFill="#e0030b">
+               <font>
+                  <Font name="Montserrat Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="logo_image_view" fitHeight="83.0" fitWidth="170.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" scaleZ="1.1" />
+            <TextField fx:id="user_name_txtF" alignment="CENTER" layoutX="129.0" layoutY="213.0" prefHeight="43.0" prefWidth="332.0" promptText="اسم المستخدم" styleClass="input_outer">
+               <font>
+                  <Font name="Montserrat Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="483.0" layoutY="214.0" prefHeight="43.0" prefWidth="95.0" text="المستخدم">
                <font>
                   <Font name="Montserrat Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="32.0" layoutY="328.0" prefHeight="54.0" prefWidth="277.0" styleClass="Dept_Name_LoginForm" text="Processing Department">
+            <PasswordField fx:id="password_passF" alignment="CENTER" layoutX="129.0" layoutY="271.0" onAction="#enterLogin" prefHeight="43.0" prefWidth="332.0" promptText="الباسورد" styleClass="input">
                <font>
-                  <Font name="Montserrat Bold" size="22.0" />
+                  <Font name="Montserrat Bold" size="18.0" />
+               </font>
+            </PasswordField>
+            <Label alignment="CENTER" layoutX="477.0" layoutY="270.0" prefHeight="43.0" prefWidth="95.0" text="كلمة المرور">
+               <font>
+                  <Font name="Montserrat Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="tools_img_view" fitHeight="82.0" fitWidth="88.0" layoutX="115.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true" />
+            <FontAwesomeIconView fill="#aaaaab" glyphName="USER" layoutX="143.0" layoutY="244.0" size="25" />
+            <FontAwesomeIconView fill="#aaaaaa" glyphName="LOCK" layoutX="145.0" layoutY="301.0" size="25" />
          </children>
       </Pane>
-      <VBox layoutX="336.0" prefHeight="547.0" prefWidth="414.0" style="-fx-background-color: #fff;" AnchorPane.topAnchor="0.0">
+      <Pane layoutY="334.0" prefHeight="195.0" prefWidth="635.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="121.0" prefWidth="414.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <ImageView fx:id="join_ImageView" fitHeight="106.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="تسجيل الدخول " HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font name="Montserrat Bold" size="36.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="111.0" prefWidth="414.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <TextField fx:id="user_name_txtF" alignment="CENTER" prefHeight="43.0" prefWidth="298.0" promptText="اسم المستخدم" styleClass="input_outer">
-                     <font>
-                        <Font name="Montserrat Bold" size="18.0" />
-                     </font>
-                  </TextField>
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="95.0" text="المستخدم">
-                     <font>
-                        <Font name="Montserrat Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="96.0" prefWidth="414.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <PasswordField fx:id="password_passF" alignment="CENTER" onAction="#enterLogin" prefHeight="43.0" prefWidth="294.0" promptText="كلمة المرور" styleClass="input">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Montserrat Bold" size="18.0" />
-                     </font>
-                  </PasswordField>
-                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="95.0" text="الباسورد">
-                     <font>
-                        <Font name="Montserrat Bold" size="18.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="TOP_CENTER" prefHeight="140.0" prefWidth="414.0" VBox.vgrow="ALWAYS">
-               <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="98.0" styleClass="box8" text="دخول" textFill="WHITE" HBox.hgrow="ALWAYS">
-                     <font>
-                        <Font name="Montserrat Bold" size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="60.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
+            <ImageView fx:id="tools_img_view" fitHeight="135.0" fitWidth="320.0" layoutX="145.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="250.0" layoutY="4.0" mnemonicParsing="false" onAction="#login" prefHeight="27.0" prefWidth="98.0" styleClass="box8" text="دخول" textFill="#b92626">
+               <font>
+                  <Font name="Montserrat Bold" size="24.0" />
+               </font>
+            </Button>
          </children>
-      </VBox>
-      <Pane layoutY="546.0" prefHeight="48.0" prefWidth="750.0" style="-fx-background-color: #D7D2D2;">
+      </Pane>
+      <Pane layoutY="529.0" prefHeight="48.0" prefWidth="635.0" style="-fx-background-color: #D7D2D2;">
          <children>
-            <Label layoutX="16.0" layoutY="16.0" prefHeight="17.0" prefWidth="181.0" text="System by Eng: Mohamed Gabr">
+            <Label layoutX="7.0" layoutY="16.0" prefHeight="17.0" prefWidth="162.0" text="System by Eng: Mohamed Gabr">
                <font>
-                  <Font name="Montserrat Regular" size="11.0" />
+                  <Font name="Montserrat Regular" size="10.0" />
                </font></Label>
-            <Label layoutX="215.0" layoutY="16.0" prefHeight="17.0" prefWidth="231.0" text="Supervised by: Eng. Hassan Farid Ahmed">
+            <Label layoutX="176.0" layoutY="16.0" prefHeight="17.0" prefWidth="206.0" text="Supervised by: Eng. Hassan Farid Ahmed">
                <font>
-                  <Font name="Montserrat Regular" size="11.0" />
+                  <Font name="Montserrat Regular" size="10.0" />
                </font></Label>
-            <Label layoutX="471.0" layoutY="16.0" prefHeight="17.0" prefWidth="277.0" text="Operation Director: Eng. Mohamed Magdy Amer">
+            <Label layoutX="393.0" layoutY="16.0" prefHeight="17.0" prefWidth="235.0" text="Operation Director: Eng. Mohamed Magdy Amer">
                <font>
-                  <Font name="Montserrat Regular" size="11.0" />
+                  <Font name="Montserrat Regular" size="9.5" />
                </font></Label>
          </children>
       </Pane>

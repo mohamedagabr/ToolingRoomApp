@@ -46,7 +46,7 @@ public class LoginController implements Initializable {
         logo_image_view.setImage(logoImg);
         Image joinImg = new Image(LoginController.class.getResourceAsStream("/images/join.png"));
         join_ImageView.setImage(joinImg);
-        Image toolsImg = new Image(LoginController.class.getResourceAsStream("/images/tools01.png"));
+        Image toolsImg = new Image(LoginController.class.getResourceAsStream("/images/tools03.png"));
         tools_img_view.setImage(toolsImg);
 
 

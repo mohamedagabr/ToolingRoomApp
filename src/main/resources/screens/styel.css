@@ -23,22 +23,10 @@
     -fx-background-radius: 20;
 }
 
-.box5{
-    -fx-background-color: #e06f51;
-    -fx-background-radius: 20;
-}
 
-.box6{
-    -fx-background-color: #ECB365;
-    -fx-background-radius: 20;
-}
-.box7{
-    -fx-background-color: #064663;
-    -fx-background-radius: 20;
-}
 
 .box8{
-    -fx-background-color: #075bf0;
+    -fx-background-color: rgb(222, 217, 217);
     -fx-background-radius: 20;
     -fx-border-radius: 10px;
 }

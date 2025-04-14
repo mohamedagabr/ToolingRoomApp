@@ -24,9 +24,9 @@
             </VBox>
             <VBox prefHeight="92.0" prefWidth="332.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="208.0" styleClass="deptartment_lbl" text="Processing Department" textFill="#f8f8f8">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="233.0" styleClass="deptartment_lbl" text="Processing Department" textFill="#f8f8f8">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="Montserrat Bold" size="18.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="10.0" />
@@ -41,7 +41,7 @@
                <children>
                   <Label fx:id="welcome_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="289.0" textFill="WHITE" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="Montserrat Bold" size="16.0" />
                      </font>
                      <VBox.margin>
                         <Insets right="10.0" />
@@ -49,7 +49,7 @@
                   </Label>
                   <Label fx:id="date_lbl" alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="28.0" prefWidth="288.0" textFill="#fcfcfc" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="Montserrat Bold" size="16.0" />
                      </font>
                      <VBox.margin>
                         <Insets right="10.0" />
@@ -57,7 +57,7 @@
                   </Label>
                   <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="175.0" text="الوردية : الاولى" textFill="WHITE" VBox.vgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="Montserrat Bold" size="16.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="5.0" right="10.0" />
@@ -81,10 +81,13 @@
                      <HBox.margin>
                         <Insets right="120.0" />
                      </HBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="134.0" styleClass="addUser_btn" text="اضافة مستخدم ">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Montserrat Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="134.0" styleClass="addUser_btn" text="اضافة مستخدم ">
+                     <font>
+                        <Font name="Montserrat Bold" size="14.0" />
                      </font>
                      <HBox.margin>
                         <Insets right="100.0" />
@@ -93,9 +96,9 @@
                         <FontAwesomeIconView glyphName="PLUS_CIRCLE" size="20" />
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="22.0" prefWidth="82.0" styleClass="load_btn" text="تحديث ">
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="22.0" prefWidth="82.0" styleClass="load_btn" text="تحديث ">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Montserrat Bold" size="14.0" />
                      </font>
                      <graphic>
                         <FontAwesomeIconView glyphName="SPINNER" />
@@ -109,7 +112,7 @@
                         <Insets right="5.0" />
                      </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="Montserrat Bold" size="16.0" />
                      </font>
                   </TextField>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="41.0">
@@ -149,7 +152,7 @@
                      <children>
                         <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="161.0" styleClass="users_btn" text="المستخدمين">
                            <font>
-                              <Font name="System Bold" size="20.0" />
+                              <Font name="Montserrat Bold" size="20.0" />
                            </font>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -160,7 +163,7 @@
                         </Button>
                         <Button mnemonicParsing="false" prefHeight="44.0" prefWidth="161.0" styleClass="users_btn" text="التجهيزات  ">
                            <font>
-                              <Font name="System Bold" size="20.0" />
+                              <Font name="Montserrat Bold" size="20.0" />
                            </font>
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="WRENCH" size="20" />
