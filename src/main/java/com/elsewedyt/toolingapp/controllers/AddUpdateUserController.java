@@ -34,6 +34,7 @@ public class AddUpdateUserController implements Initializable {
     private ComboBox<String> userActive_ComBox;
     @FXML
     private Button saveUser_btn;
+    int updatedUserId = 0;
     ObservableList listComboRole ;
     ObservableList listComboActive ;
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
@@ -48,6 +49,16 @@ public class AddUpdateUserController implements Initializable {
         userActive_ComBox.setItems(listComboActive);
     }
     public void setUserData(User us) {
+        updatedUserId = us.getId();
+        emp_id_txtF.setText(us.getEmp_id()+ "");
+        user_name_txtF.setText(us.getUsername());
+        user_name_txtF.setEditable(false);
+        password_passF.setText(us.getPassword());
+        full_name_txtF.setText(us.getFullname());
+        phone_txtF.setText(us.getPhone());
+      //  userRole_ComBox.getSelectionModel().getSelectedItem().toString();
+       // userActive_ComBox.getSelectionModel().getSelectedItem().toString();
+
     }
     public void setUpdate(boolean update) {
 
@@ -105,6 +116,10 @@ public class AddUpdateUserController implements Initializable {
     void saveUser(ActionEvent event) {
         saveUserHelp();
         clearUserPage();
+    }
+    void updateUserHelp(){
+     //   int id =
+
     }
 
 

@@ -13,7 +13,7 @@ module com.elsewedyt.toolingapp {
     requires activation;
     requires jbcrypt;
     requires org.apache.logging.log4j;
-
+    requires java.net.http;
 
     opens com.elsewedyt.toolingapp.controllers to javafx.fxml;
     opens screens to javafx.fxml;

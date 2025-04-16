@@ -106,5 +106,33 @@ public class UserDao {
         }
         return true ;
     }
+    public static boolean updateUser(User us){
+        Connection con = DbConnect.getConnect();
+        PreparedStatement ps = null ;
+        try {
+        String query = "update tooling.users set emp_id = ?,user_name = ?,password = ?,full_name = ?,phone = ?, role = ?,active = ?,creation_date = ? where id = ? ";
+        ps = con.prepareStatement(query);
+        ps.setInt(1,us.getEmp_id());
+        ps.setString(2,us.getUsername());
+        ps.setString(3,us.getPassword());
+        ps.setString(4,us.getFullname());
+        ps.setString(5,us.getPhone());
+        ps.setInt(6,us.getRole());
+        ps.setInt(7,us.getActive());
+        ps.setString(8,us.getCreation_date());
+        ps.setInt(9,us.getId());
+        return ps.execute();
+        }catch (Exception e){
+            logging.logExpWithMessage("ERROR", UserDao.class.getName(), "updatetUser", e,"sql",ps.toString());
+        }finally {
+            try {
+                con.close();
+                ps.close();
+            }catch (Exception ex){
+                logging.logException("ERROR", UserDao.class.getName(), "updatetUser close :", ex);
+            }
+        }
+        return true;
+    }
 
 }

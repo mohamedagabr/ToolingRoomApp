@@ -1,4 +1,5 @@
 package com.elsewedyt.toolingapp.controllers;
+import com.elsewedyt.toolingapp.services.ApiCaller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -7,11 +8,30 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse;
 
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) {
         try{
+//            HttpClient client = HttpClient.newHttpClient();
+//            HttpRequest request = HttpRequest.newBuilder()
+//                    .uri(new URI("https://jsonplaceholder.typicode.com/todos/1"))
+//                    .GET()
+//                    .build();
+//
+//            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//
+//            System.out.println("Response:");
+//            System.out.println(response.body());
+            String url = "https://jsonplaceholder.typicode.com/todos/1";
+            String response = ApiCaller.callApi(url,"GET",null);
+
+
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/screens/Login.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("تسجيل الدخول");
