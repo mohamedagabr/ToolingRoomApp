@@ -29,7 +29,8 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.net.URL;
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ControlPageController implements Initializable {
@@ -75,8 +76,9 @@ public class ControlPageController implements Initializable {
 
        Image img = new Image(LoginController.class.getResourceAsStream("/images/company_logo.png"));
        logo_ImageView.setImage(img);
-       String date = LocalDate.now() + "";
-       date_lbl.setText("تاريخ اليوم : " + date);
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy  hh:mm a");
+        date_lbl.setText(dateFormat.format(date) +" ");
        try {
            if (UserContext.getCurrentUser() != null) {
            String msg = ("مرحبا : " + UserContext.getCurrentUser().getFullname());
@@ -164,13 +166,14 @@ public class ControlPageController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/Screens/NewUser.fxml"));
             Parent parent = fxmlLoader.load(); // Load the FXML and get the root
-            Add_Update_UserController add_update_user_controller = fxmlLoader.getController();
-            add_update_user_controller.setUserData(us);
+            AddUpdateUserController addupdateuser_controller = fxmlLoader.getController();
+            addupdateuser_controller.setUserData(us);
+            addupdateuser_controller.setUpdate(true);
             Stage stage = new Stage();
             stage.setScene(new Scene(parent));
             stage.setTitle("تعديل مستخدم");
             stage.show();
-            add_update_user_controller.setSaveButton();
+            //add_update_user_controller.setSaveButton();
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -219,7 +222,7 @@ public class ControlPageController implements Initializable {
     @FXML
     void addUser(ActionEvent e) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/screens/Add_Update_User.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/screens/AddUpdateUser.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             stage.setScene(scene);

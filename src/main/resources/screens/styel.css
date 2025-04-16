@@ -172,10 +172,11 @@
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 100;
 }
-.box_welcome{
-    -fx-background-color: #9f9a9a;
-    -fx-background-radius: 15;
-    -fx-text-fill: white;
+.table01{
+    -fx-background-radius: 20;
+}
+.userIdCol{
+
 }
 /* Add-Update Page */
 .addUser_btn {

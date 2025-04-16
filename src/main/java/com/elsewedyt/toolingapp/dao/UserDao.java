@@ -40,7 +40,6 @@ public class UserDao {
         } catch (Exception e) {
             //logging.logException("ERROR", UserDao.class.getName(), "checkLogin", e);
             logging.logExpWithMessage("ERROR", UserDao.class.getName(), "checkLogin", e,"sql",ps.toString());
-            ALERT("",APP_BUNDLE().getString("Login Error"),ALERT_ERROR);
 
         } finally {
             try {
@@ -58,7 +57,7 @@ public class UserDao {
             String query = "select emp_id,user_name,full_name,phone,role,active,creation_date from users ";
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            if (rs.next()){
                list.add(new User(rs.getInt(DEF.USERS_EMP_ID),
                        rs.getString(DEF.USERS_USERNAME),
                        rs.getString(DEF.USERS_FULLNAME),
@@ -81,24 +80,33 @@ public class UserDao {
         int userId = -1;
         return userId;
     }
-    //    public static ObservableList<Admins> getUsers() {
-    //        Connection con = DbConnection.getConnect();
-    //        ObservableList<Admins> list = FXCollections.observableArrayList();
-    //        try {
-    //            String query = "select id , username , fullname , phone from users";
-    //            PreparedStatement ps = con.prepareStatement(query);
-    //            ResultSet rs = ps.executeQuery();
-    //            while (rs.next()) {
-    //            list.add(new Admins(rs.getInt("id"), rs.getString("username"), rs.getString("fullname"), rs.getString("phone")));
-    //            }
-    //        } catch (Exception e) {
-    //        } finally {
-    //            try {
-    //                con.close();
-    //            } catch (Exception e) {
-    //            }
-    //        }
-    //        return list;
-    //    }
+    public static boolean insertUser(User us){
+        Connection con = DbConnect.getConnect();
+        PreparedStatement ps = null ;
+        try {
+           String query = "insert into tooling.users (emp_id,user_name,password,full_name,phone,role,active,creation_date) values(?,?,?,?,?,?,?,?) " ;
+           ps = con.prepareStatement(query);
+           ps.setInt(1,us.getEmp_id());
+           ps.setString(2,us.getUsername());
+           ps.setString(3,us.getPassword());
+           ps.setString(4,us.getFullname());
+           ps.setString(5,us.getPhone());
+           ps.setInt(6,us.getRole());
+           ps.setInt(7,us.getActive());
+           ps.setString(8,us.getCreation_date());
+           return ps.execute();
+
+        }catch (Exception e){
+            logging.logExpWithMessage("ERROR", UserDao.class.getName(), "insertUser", e,"sql",ps.toString());
+        }finally {
+            try {
+                con.close();
+                ps.close();
+            }catch (Exception ex){
+                logging.logException("ERROR", UserDao.class.getName(), "insertUser close :", ex);
+            }
+        }
+        return true ;
+    }
 
 }
