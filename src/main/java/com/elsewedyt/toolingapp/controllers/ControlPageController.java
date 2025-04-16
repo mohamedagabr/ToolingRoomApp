@@ -1,5 +1,4 @@
 package com.elsewedyt.toolingapp.controllers;
-
 import com.elsewedyt.toolingapp.Logging.logging;
 import com.elsewedyt.toolingapp.dao.UserDao;
 import com.elsewedyt.toolingapp.models.User;
@@ -42,33 +41,24 @@ public class ControlPageController implements Initializable {
     private Label date_lbl;
     @FXML
     private TableView<User> users_tbl_view;
-
     @FXML
     private TableColumn<User, Integer> empId_colm;
-
     @FXML
     private TableColumn<User, String> username_colm;
-
     @FXML
     private TableColumn<User, String> fullname_colm;
-
     @FXML
     private TableColumn<User, Integer> phone_colm;
-
     @FXML
     private TableColumn<User, Integer> roleGroup_colm;
-
     @FXML
     private TableColumn<User, Integer> active_colm;
-
     @FXML
     private TableColumn<User, String> creationDate_colm;
-
     @FXML
     private TableColumn<User, String> edit_colm;
     @FXML
     private TextField searchUsers_txtF;
-
     ObservableList<User> listUsers ;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -164,16 +154,16 @@ public class ControlPageController implements Initializable {
 
     private void openEditUserPage(User us){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/Screens/NewUser.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/Screens/AddUpdateUser.fxml"));
             Parent parent = fxmlLoader.load(); // Load the FXML and get the root
             AddUpdateUserController addupdateuser_controller = fxmlLoader.getController();
             addupdateuser_controller.setUserData(us);
             addupdateuser_controller.setUpdate(true);
             Stage stage = new Stage();
             stage.setScene(new Scene(parent));
-            stage.setTitle("تعديل مستخدم");
+            stage.setTitle("Update User");
             stage.show();
-            //add_update_user_controller.setSaveButton();
+            addupdateuser_controller.setSaveButton();
         } catch (Exception ex) {
             System.out.println(ex);
         }

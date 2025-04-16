@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.net.URL;
@@ -21,24 +18,22 @@ public class AddUpdateUserController implements Initializable {
     private ImageView logo_image_view;
     @FXML
     private TextField emp_id_txtF;
-
     @FXML
     private TextField user_name_txtF;
-
     @FXML
     private PasswordField password_passF;
-
     @FXML
     private TextField full_name_txtF;
-
     @FXML
     private TextField phone_txtF;
     @FXML
     private Label done_lbl;
     @FXML
-    private ComboBox<Integer> userRole_ComBox;
+    private ComboBox<String> userRole_ComBox;
     @FXML
-    private ComboBox<Integer> userActive_ComBox;
+    private ComboBox<String> userActive_ComBox;
+    @FXML
+    private Button saveUser_btn;
     ObservableList listComboRole ;
     ObservableList listComboActive ;
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
@@ -58,7 +53,7 @@ public class AddUpdateUserController implements Initializable {
 
     }
     public void setSaveButton(){
-        //save_btn.setText("تعديل");  Move to setUserData
+        saveUser_btn.setText("تعديل");
     }
     void saveUserHelp(){
         int roleInt = 0;
@@ -70,17 +65,18 @@ public class AddUpdateUserController implements Initializable {
         String fullname = full_name_txtF.getText();
         String phone = phone_txtF.getText();
         String creationDate = dateFormat.format(currentDate);
-        String roleStr = userRole_ComBox.getSelectionModel().getSelectedItem().toString();
+
+        String roleStr = userRole_ComBox.getSelectionModel().getSelectedItem();
         if(roleStr.equals("Admin")){
             roleInt = 1 ;
         }else if (roleStr.equals("User")){
             roleInt = 0 ;
         }
-        String activeStr = userActive_ComBox.getSelectionModel().getSelectedItem().toString();
-        if(roleStr.equals("Active")){
-            activeInt = 1 ;
-        }else if (roleStr.equals("Not Active")){
-            activeInt = 0 ;
+       String activeStr = userActive_ComBox.getSelectionModel().getSelectedItem();
+      if(activeStr.equals("Active")){
+          activeInt = 1 ;
+        }else if (activeStr.equals("Not Active")){
+           activeInt = 0 ;
         }
         User us = new User();
         us.setEmp_id(emp_id);
@@ -93,7 +89,6 @@ public class AddUpdateUserController implements Initializable {
         us.setCreation_date(creationDate);
         if(!UserDao.insertUser(us)){
          done_lbl.setText("تم اضافة المستخدم بنجاح");
-            clearUserPage();
         }
 
     }
@@ -106,10 +101,12 @@ public class AddUpdateUserController implements Initializable {
         userRole_ComBox.getSelectionModel().select(-1);
         userActive_ComBox.getSelectionModel().select(-1);
     }
-
     @FXML
     void saveUser(ActionEvent event) {
         saveUserHelp();
+        clearUserPage();
     }
+
+
 
 }

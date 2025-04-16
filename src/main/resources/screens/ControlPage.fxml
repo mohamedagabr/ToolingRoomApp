@@ -147,13 +147,13 @@
                <children>
                   <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" styleClass="table01" HBox.hgrow="ALWAYS">
                      <columns>
-                        <TableColumn fx:id="empId_colm" prefWidth="75.0" styleClass="userIdCol" text="كود الموظف" />
-                        <TableColumn fx:id="username_colm" minWidth="20.0" prefWidth="89.6666259765625" text="اسم المستخدم" />
+                        <TableColumn fx:id="empId_colm" maxWidth="4000.0" prefWidth="75.0" styleClass="userIdCol" text="كود الموظف" />
+                        <TableColumn fx:id="username_colm" maxWidth="4500.0" minWidth="15.0" prefWidth="89.6666259765625" text="اسم المستخدم" />
                         <TableColumn fx:id="fullname_colm" maxWidth="6000.0" minWidth="40.0" prefWidth="60.3333740234375" text="الاسم بالكامل" />
                         <TableColumn fx:id="phone_colm" prefWidth="75.0" text="رقم الموبيل" />
                         <TableColumn fx:id="roleGroup_colm" maxWidth="3000.0" prefWidth="75.0" text="الدور" />
                         <TableColumn fx:id="active_colm" maxWidth="3000.0" prefWidth="75.0" text="النشاط" />
-                        <TableColumn fx:id="creationDate_colm" prefWidth="75.0" text="تاريخ الانشاء" />
+                        <TableColumn fx:id="creationDate_colm" maxWidth="6000.0" minWidth="20.0" prefWidth="75.0" text="تاريخ الانشاء" />
                         <TableColumn fx:id="edit_colm" minWidth="30.0" prefWidth="75.0" text="تعديل - حذف" />
                      </columns>
                      <columnResizePolicy>
