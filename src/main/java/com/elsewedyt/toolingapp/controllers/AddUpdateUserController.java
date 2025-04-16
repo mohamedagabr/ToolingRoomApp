@@ -92,8 +92,19 @@ public class AddUpdateUserController implements Initializable {
         us.setActive(activeInt);
         us.setCreation_date(creationDate);
         if(!UserDao.insertUser(us)){
-            done_lbl.setText("تم اضافة المستخدم بنجاح");
+         done_lbl.setText("تم اضافة المستخدم بنجاح");
+            clearUserPage();
         }
+
+    }
+    void clearUserPage(){
+        emp_id_txtF.clear();
+        user_name_txtF.clear();
+        password_passF.clear();
+        full_name_txtF.clear();
+        phone_txtF.clear();
+        userRole_ComBox.getSelectionModel().select(-1);
+        userActive_ComBox.getSelectionModel().select(-1);
     }
 
     @FXML
