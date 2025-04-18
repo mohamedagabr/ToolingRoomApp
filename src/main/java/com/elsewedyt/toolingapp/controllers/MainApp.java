@@ -1,5 +1,6 @@
 package com.elsewedyt.toolingapp.controllers;
-import com.elsewedyt.toolingapp.services.ApiCaller;
+//import com.elsewedyt.toolingapp.services.ApiCaller;
+import com.elsewedyt.toolingapp.Logging.logging;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -28,8 +29,8 @@ public class MainApp extends Application {
 //
 //            System.out.println("Response:");
 //            System.out.println(response.body());
-            String url = "https://jsonplaceholder.typicode.com/todos/1";
-            String response = ApiCaller.callApi(url,"GET",null);
+//            String url = "https://jsonplaceholder.typicode.com/todos/1";
+//            String response = ApiCaller.callApi(url,"GET",null);
 
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/screens/Login.fxml"));
@@ -39,7 +40,7 @@ public class MainApp extends Application {
             stage.show();
             stage.setResizable(false);
     }catch (Exception e){
-            System.out.println("Start Method : " + e);
+            logging.logException("ERROR", this.getClass().getName(), "start", e);
         }
     }
 

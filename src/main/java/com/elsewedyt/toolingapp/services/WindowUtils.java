@@ -236,6 +236,24 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_ADD_COMPANE_PAGE", ex);
         }
     }
+    public static int getUserRole(String role){
+        int roleInt = 0;
+        if(role == "Admin"){
+            roleInt = 1 ;
+        } else if (role == "User") {
+            roleInt = 0 ;
+        }
+        return roleInt ;
+    }
+    public static int getUserActive(String active){
+        int activeInt = 0 ;
+        if(active == "Active"){
+            activeInt = 1 ;
+        } else if (active == "Not Active") {
+            activeInt = 0 ;
+        }
+        return activeInt;
+    }
 //    public static void OPEN_EDIT_SALES_PAGE(LocalDate from , LocalDate to) {
 //        try {
 //            OPEN_WINDOW(

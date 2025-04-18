@@ -15,7 +15,7 @@
    <children>
       <Pane prefHeight="315.0" prefWidth="635.0">
          <children>
-            <ImageView fx:id="join_ImageView" fitHeight="48.0" fitWidth="84.0" layoutX="286.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="join_ImageView" fitHeight="48.0" fitWidth="84.0" layoutX="291.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
             <Text layoutX="243.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="تسجيل الدخول ">
                <font>
                   <Font name="Montserrat Bold" size="25.0" />
@@ -58,7 +58,7 @@
       </Pane>
       <Pane layoutY="334.0" prefHeight="195.0" prefWidth="635.0">
          <children>
-            <ImageView fx:id="tools_img_view" fitHeight="135.0" fitWidth="360.0" layoutX="138.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="tools_img_view" fitHeight="135.0" fitWidth="308.0" layoutX="163.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="4.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="98.0" styleClass="box8" text="دخول" textFill="#b92626">
                <font>
                   <Font name="Montserrat Bold" size="24.0" />

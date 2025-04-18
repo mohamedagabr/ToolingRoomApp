@@ -35,7 +35,7 @@
                         <Insets top="7.0" />
                      </VBox.margin>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="111.0" text="الوردية : الاولى" textFill="#b92626" VBox.vgrow="ALWAYS">
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="27.0" prefWidth="104.0" text="الوردية : الاولى" textFill="#b92626" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="Montserrat Bold" size="16.0" />
                      </font>
@@ -108,7 +108,7 @@
                         <FontAwesomeIconView fill="#6d9886" glyphName="USER_PLUS" size="18" />
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="93.0" styleClass="load_btn" text="تحديث ">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#reloadButton" prefHeight="29.0" prefWidth="93.0" styleClass="load_btn" text="تحديث ">
                      <font>
                         <Font name="Montserrat Bold" size="15.0" />
                      </font>
@@ -147,11 +147,13 @@
                <children>
                   <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" styleClass="table01" HBox.hgrow="ALWAYS">
                      <columns>
+                        <TableColumn fx:id="userId_colm" maxWidth="2500.0" prefWidth="75.0" text="الكود" />
                         <TableColumn fx:id="empId_colm" maxWidth="4000.0" prefWidth="75.0" styleClass="userIdCol" text="كود الموظف" />
                         <TableColumn fx:id="username_colm" maxWidth="4500.0" minWidth="15.0" prefWidth="89.6666259765625" text="اسم المستخدم" />
+                        <TableColumn fx:id="user_password_colm" maxWidth="3000.0" prefWidth="75.0" text="الباسورد" />
                         <TableColumn fx:id="fullname_colm" maxWidth="6000.0" minWidth="40.0" prefWidth="60.3333740234375" text="الاسم بالكامل" />
                         <TableColumn fx:id="phone_colm" prefWidth="75.0" text="رقم الموبيل" />
-                        <TableColumn fx:id="roleGroup_colm" maxWidth="3000.0" prefWidth="75.0" text="الدور" />
+                        <TableColumn fx:id="role_colm" maxWidth="3000.0" prefWidth="75.0" text="الدور" />
                         <TableColumn fx:id="active_colm" maxWidth="3000.0" prefWidth="75.0" text="النشاط" />
                         <TableColumn fx:id="creationDate_colm" maxWidth="6000.0" minWidth="20.0" prefWidth="75.0" text="تاريخ الانشاء" />
                         <TableColumn fx:id="edit_colm" minWidth="30.0" prefWidth="75.0" text="تعديل - حذف" />

@@ -1,5 +1,6 @@
 package com.elsewedyt.toolingapp.controllers;
 
+import com.elsewedyt.toolingapp.Logging.logging;
 import com.elsewedyt.toolingapp.models.User;
 import com.elsewedyt.toolingapp.models.UserContext;
 import javafx.event.ActionEvent;
@@ -68,6 +69,7 @@ public class MainControlller implements Initializable {
             stage.setY((rd.getHeight() - stage.getHeight()) / 2);
             stage.setResizable(true);
         } catch (Exception ex) {
+            logging.logException("ERROR", this.getClass().getName(), "Open_Control_Page", ex);
         }
     }
 

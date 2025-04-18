@@ -1,6 +1,7 @@
 package com.elsewedyt.toolingapp.controllers;
 import com.elsewedyt.toolingapp.Logging.logging;
 import com.elsewedyt.toolingapp.dao.UserDao;
+import com.elsewedyt.toolingapp.db.DbConnect;
 import com.elsewedyt.toolingapp.models.User;
 import com.elsewedyt.toolingapp.models.UserContext;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
@@ -28,9 +29,14 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.net.URL;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ControlPageController implements Initializable {
     @FXML
@@ -42,6 +48,10 @@ public class ControlPageController implements Initializable {
     @FXML
     private TableView<User> users_tbl_view;
     @FXML
+    private TableColumn<User, Integer> userId_colm;
+    @FXML
+    private TableColumn<User, String> user_password_colm;
+    @FXML
     private TableColumn<User, Integer> empId_colm;
     @FXML
     private TableColumn<User, String> username_colm;
@@ -50,7 +60,7 @@ public class ControlPageController implements Initializable {
     @FXML
     private TableColumn<User, Integer> phone_colm;
     @FXML
-    private TableColumn<User, Integer> roleGroup_colm;
+    private TableColumn<User, String> role_colm;
     @FXML
     private TableColumn<User, Integer> active_colm;
     @FXML
@@ -60,6 +70,9 @@ public class ControlPageController implements Initializable {
     @FXML
     private TextField searchUsers_txtF;
     ObservableList<User> listUsers ;
+    User us = null ;
+    Connection con = null ;
+    PreparedStatement ps = null ;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
        // fontawTools_lbl.setGraphic(new FontAwesomeIconView("fas-screwdriver-wrench"));
@@ -78,18 +91,34 @@ public class ControlPageController implements Initializable {
            logging.logException("ERROR", this.getClass().getName(), "initialize", ex);
            System.out.println(ex);
        }
-    loadData();
-    listUsers = UserDao.getUsers();
-    users_tbl_view.setItems(listUsers);
+       userId_colm.setVisible(false);
+       user_password_colm.setVisible(false);
+       loadData();
 
+        //listUsers.indexOf(role_colm.getCellFactory().equals(0));
+        //role_colm.setCellFactory() = ;
+
+
+           // int userActiveIndex = listComboUserActive.indexOf(activeStr);
+
+
+       listUsers = UserDao.getUsers();
+       users_tbl_view.setItems(listUsers);
+
+    }
+    public void refresh(){
+        listUsers = UserDao.getUsers();
+        users_tbl_view.setItems(listUsers);
     }
 
     private void loadData() {
+        userId_colm.setCellValueFactory(new PropertyValueFactory<>("id"));
         empId_colm.setCellValueFactory(new PropertyValueFactory<>("emp_id"));
         username_colm.setCellValueFactory(new PropertyValueFactory<>("username"));
+        user_password_colm.setCellValueFactory(new PropertyValueFactory<>("password"));
         fullname_colm.setCellValueFactory(new PropertyValueFactory<>("fullname"));
         phone_colm.setCellValueFactory(new PropertyValueFactory<>("phone"));
-        roleGroup_colm.setCellValueFactory(new PropertyValueFactory<>("role"));
+        role_colm.setCellValueFactory(new PropertyValueFactory<>("role"));
         active_colm.setCellValueFactory(new PropertyValueFactory<>("active"));
         creationDate_colm.setCellValueFactory(new PropertyValueFactory<>("creation_date"));
 
@@ -97,7 +126,7 @@ public class ControlPageController implements Initializable {
         username_colm.setStyle("-fx-alignment: CENTER;-fx-font-size:12px;-fx-font-weight:bold;");
         fullname_colm.setStyle("-fx-alignment: CENTER;");
         phone_colm.setStyle("-fx-alignment: CENTER;");
-        roleGroup_colm.setStyle("-fx-alignment: CENTER;");
+        role_colm.setStyle("-fx-alignment: CENTER;");
         active_colm.setStyle("-fx-alignment: CENTER;");
         creationDate_colm.setStyle("-fx-alignment: CENTER;");
 
@@ -131,10 +160,40 @@ public class ControlPageController implements Initializable {
                             stagemain.close();
 
                             User us = users_tbl_view.getSelectionModel().getSelectedItem();
-                            openEditUserPage(us);
+                            openEditUserPage(us.getEmp_id());
                         });
                         deleteIcon.setOnMouseClicked((MouseEvent event) -> {
-                            // code
+
+                            Button button1 = new Button();
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                             alert.setHeaderText("هل انت متاكد من حذف المستخدم");
+                             alert.setContentText("تأكيد حذف المستخدم");
+                             alert.getButtonTypes().addAll(ButtonType.CANCEL);
+
+                             Button cancelButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
+                            Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
+                             cancelButton.setText("إلغاء");
+                             okButton.setText("موافق");
+
+                             alert.showAndWait().ifPresent(response -> {
+                             if (response == ButtonType.OK) {
+                             try {
+                             event.consume();
+                             us = users_tbl_view.getSelectionModel().getSelectedItem();
+//                             String query = "DELETE FROM `users` WHERE emp_id  =" + us.getEmp_id();
+//                             con = DbConnect.getConnect();
+//                             ps = con.prepareStatement(query);
+//                             ps.execute();
+                              UserDao.deleteUser(us.getEmp_id());
+                             refresh();
+
+                              } catch (Exception ex) {
+                                 logging.logException("ERROR", this.getClass().getName(), "deleteUserHelp", ex);
+                                }
+                                } else if (response == ButtonType.CANCEL) {
+
+                                 }
+                                     });
                         });
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
@@ -152,20 +211,21 @@ public class ControlPageController implements Initializable {
         users_tbl_view.setItems(listUsers);
     }
 
-    private void openEditUserPage(User us){
+    private void openEditUserPage(int emp_id){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(LoginController.class.getResource("/Screens/AddUpdateUser.fxml"));
             Parent parent = fxmlLoader.load(); // Load the FXML and get the root
             AddUpdateUserController addupdateuser_controller = fxmlLoader.getController();
-            addupdateuser_controller.setUserData(us);
-            addupdateuser_controller.setUpdate(true);
+            addupdateuser_controller.setUserData(emp_id,true);
+            // Change Save Button from "حفظ" to " تعديل"
+            addupdateuser_controller.setSaveButton();
             Stage stage = new Stage();
             stage.setScene(new Scene(parent));
             stage.setTitle("Update User");
             stage.show();
-            addupdateuser_controller.setSaveButton();
+
         } catch (Exception ex) {
-            System.out.println(ex);
+            logging.logException("ERROR", this.getClass().getName(), "openEditUserPage", ex);
         }
 
     }
@@ -222,7 +282,12 @@ public class ControlPageController implements Initializable {
             stage.setY((rd.getHeight() - stage.getHeight()) / 2);
             stage.setResizable(false);
         } catch (Exception ex) {
+            logging.logException("ERROR", this.getClass().getName(), "addUser", ex);
         }
+    }
+    @FXML
+    void reloadButton(ActionEvent event) {
+        refresh();
     }
 
     }
