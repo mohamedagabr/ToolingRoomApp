@@ -145,7 +145,7 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" prefHeight="467.0" prefWidth="999.0" VBox.vgrow="ALWAYS">
                <children>
-                  <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" styleClass="table01" HBox.hgrow="ALWAYS">
+                  <TableView fx:id="users_tbl_view" nodeOrientation="RIGHT_TO_LEFT" prefHeight="538.0" prefWidth="818.0" styleClass="ta" HBox.hgrow="ALWAYS">
                      <columns>
                         <TableColumn fx:id="userId_colm" maxWidth="2500.0" prefWidth="75.0" text="الكود" />
                         <TableColumn fx:id="empId_colm" maxWidth="4000.0" prefWidth="75.0" styleClass="userIdCol" text="كود الموظف" />
